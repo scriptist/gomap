@@ -9,8 +9,9 @@ module.exports = function runServer(location, port, cb) {
 
   setTimeout(function() {
     var child = spawn('python', [
+      '-u',
       'example.py',
-      '-ar', 30,
+      '-ar', 15,
       '-u', username,
       '-p', username,
       '-l', location,
@@ -32,6 +33,12 @@ module.exports = function runServer(location, port, cb) {
     child.on('close', function(code) {
         console.log('Exited with code', code);
     });
+
+    // Kill after 15 minutes
+    setTimeout(function() {
+      child.kill();
+      exec('killall python');
+    }, 15 * 60 * 1000)
 
     cb(child);
   }, 500);
