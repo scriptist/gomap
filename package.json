@@ -1,0 +1,21 @@
+{
+  "name": "gomap",
+  "version": "0.0.1",
+  "description": "gomap",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scriptist/gomap.git"
+  },
+  "author": "Michael Berman <me@scripti.st>",
+  "bugs": {
+    "url": "https://github.com/scriptist/gomap/issues"
+  },
+  "homepage": "https://github.com/scriptist/gomap#readme",
+  "devDependencies": {
+    "express": "^4.14.0"
+  },
+  "dependencies": {
+    "express-http-proxy": "^0.8.0"
+  }
+}
